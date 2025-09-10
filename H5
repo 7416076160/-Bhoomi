@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unique Project - Portfolio with Live Clock</title>
+  <style>
+    body {
+      margin:0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #f6d365, #fda085);
+      color:#222;
+      text-align:center;
+    }
+    header {
+      padding:30px;
+      background:rgba(255,255,255,0.3);
+      backdrop-filter: blur(6px);
+    }
+    header h1 {
+      margin:0;
+      font-size:36px;
+    }
+    #clock {
+      font-size:24px;
+      font-weight:bold;
+      margin-top:10px;
+      color:#444;
+    }
+    section {
+      padding:40px 20px;
+    }
+    .card {
+      background:white;
+      border-radius:10px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.1);
+      padding:20px;
+      margin:20px auto;
+      max-width:600px;
+    }
+    .skills {
+      display:flex;
+      justify-content:space-around;
+      margin-top:20px;
+    }
+    .skill {
+      background:#fda085;
+      color:white;
+      padding:10px 15px;
+      border-radius:20px;
+      font-weight:bold;
+    }
+    footer {
+      background:#222;
+      color:white;
+      padding:15px;
+      margin-top:20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🌟 My Unique Portfolio</h1>
+    <div id="clock">Loading time...</div>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>About Me</h2>
+      <p>Hello! I am a web developer passionate about creating unique projects using HTML, CSS, and JavaScript.</p>
+    </div>
+
+    <div class="card">
+      <h2>My Skills</h2>
+      <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Contact</h2>
+      <p>📧 Email: example@mail.com</p>
+      <p>📱 Phone: +123 456 789</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 My Unique Project | All Rights Reserved
+  </footer>
+
+  <script>
+    // Digital Clock Script
+    function updateClock() {
+      const now = new Date();
+      let h = now.getHours();
+      let m = now.getMinutes();
+      let s = now.getSeconds();
+      const ampm = h >= 12 ? 'PM' : 'AM';
+      h = h % 12;
+      h = h ? h : 12; // convert 0 to 12
+      m = m < 10 ? '0'+m : m;
+      s = s < 10 ? '0'+s : s;
+      document.getElementById('clock').innerText = `${h}:${m}:${s} ${ampm}`;
+    }
+    setInterval(updateClock, 1000);
+
